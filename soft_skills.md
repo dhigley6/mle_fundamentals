@@ -8,7 +8,6 @@
 
 ### Business
 
-
 ## Level Expectations
 
 Adapted from "The Software Engineer's Guidebook"
@@ -65,3 +64,48 @@ No table
 | Mentoring | Mentors senior engineers and less experienced engineers |
 | Learning | Keeps up with their domain, the industry and keeps learning |
 | Typical number of years of experience | 10+ |
+
+
+
+
+## Project Management
+
+
+
+## Giving and Receiving Feedback
+
+- Be open to feedback
+- Accept when you messed up and that you could have done better
+- Take actionable steps to improve in the future
+- Ask for clarification in areas that you disagree. Not all feedback will be applicable or realistic. You don't have to be a pushover.
+
+## Managing Priorities and Deadlines
+
+- Understand the higher-level goals of the team/project and align our priorities with this
+- 
+
+
+## Handling Ambiguity
+
+- Ask clarifying questions
+- Gather data to build or verify a hypothesis
+- Understand who the domain experts are and leverage their knowledge
+- Don't try to boil the ocean. Limit the scope of the problem initially
+- Compromising with partner teams on features/functionality
+- Forming a short-term/long-term action plan
+- Formulating and communicating the trade-offs of various approaches
+
+
+## Handling Conflicts
+
+- Try to understand the other person's point of view
+- Have clear, logical rationale for your position
+- Use objective data to argue your point
+- Seek mediation from senior engineers/managers if a consensus cannot be reached
+- Accept the outcome regardless of being right or wrong and move forward
+
+### Convincing others of your perspective/idea
+
+- Use facts and data to present an objective argument to the other party
+- Fully understand the other party's point of view and take this into account in our proposed solution
+- 
