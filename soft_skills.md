@@ -6,6 +6,8 @@
 
 ### Engineering Managers
 
+<!-- Reference: https://leaddev.com/hiring/what-engineering-manager-taking-step -->
+
 ### Business
 
 ## Level Expectations
