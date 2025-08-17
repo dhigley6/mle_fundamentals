@@ -8,6 +8,8 @@
 
 <!-- Reference: https://leaddev.com/hiring/what-engineering-manager-taking-step -->
 
+<!-- Reference: https://www.youtube.com/watch?v=e57tjs0Vdg0 -->
+
 ### Business
 
 ## Level Expectations
