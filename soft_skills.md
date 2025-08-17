@@ -10,6 +10,8 @@
 
 <!-- Reference: https://www.youtube.com/watch?v=e57tjs0Vdg0 -->
 
+<!-- Reference: https://www.runn.io/blog/the-managers-path-summary -->
+
 ### Business
 
 ## Level Expectations
