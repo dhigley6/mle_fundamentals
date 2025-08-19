@@ -4,6 +4,13 @@
 
 ### Product Managers
 
+Typical responsibilities of product managers include
+- Understanding and representing user needs
+- Defining a vision for the product and aligning stakeholders around this vision
+- Translating the product vision to day-to-day activities, including roadmaps and features
+
+<!-- Reference: https://www.atlassian.com/agile/product-management/product-manager -->
+
 ### Engineering Managers
 
 <!-- Reference: https://leaddev.com/hiring/what-engineering-manager-taking-step -->
@@ -12,7 +19,38 @@
 
 <!-- Reference: https://www.runn.io/blog/the-managers-path-summary -->
 
-### Business
+Can vary between organizations, but typical responsibilities include
+- Driving team vision and strategy
+- Managing team dynamics and performance
+- Resource allocation and hiring
+- Stakeholder communication and collaboration
+- Professional growth and development
+
+Good references:
+- The Manager's Path
+
+### Business Analysts
+
+Business analysts bridge the gap between business objectives and technological solutions. Typical responsibilities include
+- Understanding business requirements
+- Conducting business analytics to provide actionable insights
+- Facilitating communication between business and technology teams
+
+### UX/UI Designer
+
+A UX/UI designer is responsible for crafting intuitive and enjoyable user interfaces. Typical responsibilities include
+- User research: Understanding user needs, behaviors and motivations
+- Wireframing and prototyping: Creating low-fidelity and high-fidelity prototypes to test and iterate on the products functionality and user flow.
+- Usability testing: Evaluating products' usability with real users to identify areas for improvement
+
+### Systems Administrator
+
+Manages and maintains the systems and infrastructure that software applications run on. Typical responsibilities include
+- Installing, configuring and updating hardware and software
+- Diagnosing and resolving technical issues
+- Monitoring system performance
+- Managing backups and disaster recovery systems
+- Ensuring system security
 
 ## Level Expectations
 
@@ -76,6 +114,7 @@ No table
 
 ## Project Management
 
+<!-- Potential Reference: https://www.atlassian.com/work-management/project-management -->
 
 
 ## Giving and Receiving Feedback
@@ -84,6 +123,10 @@ No table
 - Accept when you messed up and that you could have done better
 - Take actionable steps to improve in the future
 - Ask for clarification in areas that you disagree. Not all feedback will be applicable or realistic. You don't have to be a pushover.
+
+Good references:
+- Radical Candor
+- Crucial Conversations
 
 ## Managing Priorities and Deadlines
 
