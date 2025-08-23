@@ -149,9 +149,10 @@ Good references:
 - Forming a short-term/long-term action plan
 - Formulating and communicating the trade-offs of various approaches
 
-## Understanding Different Cultures
+<!-- Potential Section: ## Understanding Different Cultures -->
 
-Potential Reference: The Culture Map
+<!-- Potential Reference: The Culture Map -->
+<!-- Culture Map summmary: https://www.patkua.com/blog/book-notes-the-culture-map-by-erin-meyer/ -->
 
 
 ## Handling Conflicts
