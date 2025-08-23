@@ -114,6 +114,11 @@ No table
 
 ## Project Management
 
+- Make sure everyone is on the same page and that initiatives are completed on time.
+- Have a project kickoff meeting to establish roles, goals, timelines and get everyone on the same page.
+- Use tools like Gannt charts to visualize task and resource links/dependencies.
+- Have regular status meetings and updates, being transparent about projects and setbacks.
+
 <!-- Potential Reference: https://www.atlassian.com/work-management/project-management -->
 
 
@@ -143,6 +148,10 @@ Good references:
 - Compromising with partner teams on features/functionality
 - Forming a short-term/long-term action plan
 - Formulating and communicating the trade-offs of various approaches
+
+## Understanding Different Cultures
+
+Potential Reference: The Culture Map
 
 
 ## Handling Conflicts
