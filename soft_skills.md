@@ -168,3 +168,11 @@ Good references:
 - Use facts and data to present an objective argument to the other party
 - Fully understand the other party's point of view and take this into account in our proposed solution
 - 
+
+## Communicating Concepts to Different Audiences
+
+- Decide on the most important things to communicate
+- Ground your explanation in the knowledge that your audience already has
+- Analogies between what you are explaining and concepts the audience already knows can greatly aide understanding where you can think of them
+- Use examples to solidify understanding
+- Follow-up to ensure the concept(s) are understood
