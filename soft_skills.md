@@ -171,7 +171,7 @@ Good references:
 
 ## Communicating Concepts to Different Audiences
 
-- Decide on the most important things to communicate
+- Identify the key information and focus on that
 - Ground your explanation in the knowledge that your audience already has
 - Analogies between what you are explaining and concepts the audience already knows can greatly aide understanding where you can think of them
 - Use examples to solidify understanding
