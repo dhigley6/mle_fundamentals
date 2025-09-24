@@ -38,7 +38,22 @@ where $a$ is the input.
 
 ### Learning with Gradient Descent
 
-...
+Minimizing neural network loss functions is a high dimensional optimization problem in the space of the weights of the neural network. 
+Thus, gradient-based optimization methods are used since higher-order optimization methods will be more computationally intensive (the gradient has O(w) parameters, where w is the number of weights while the Hessian has O($w^2$)).
+
+<!-- Add stochastic gradient descent with mini-batches here -->
+
+<!-- Add ADAM here -->
+
+<!-- Add He initialization here -->
+
+<!-- Add batch/layer normalization here -->
+
+To determine the relevant derivatives for the optimization processes above, one typically uses automatic differentiation.
+In reverse-mode automatic differentiation, one augments intermediate variables in the calculation of a neural network output with adjoint variables which can be evaluated sequentially starting from the output of the network using the chain rule of calculus.
+This is implemented as a core part of standard machine learning frameworks like Tensorflow and Pytorch.
+
+<!-- TODO: Add elaboration on autograd -->
 
 ### Regularization
 
@@ -126,6 +141,8 @@ Return $\tilde{\textbf{X}}$
 
 
 Adding position embedding vectors to the input vectors enables the transformer to take into account the position of its inputs.
+
+<!-- Add something on encoder, decoder, encoder-decoder architectures -->
 
 ## References
 
