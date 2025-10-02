@@ -226,11 +226,31 @@ Purpose:
 
 ### Subqueries
 
+A SQL subquery is a query nested within another query. A correlated subquery is a special type of subquery which references a column from the outer query. Correlated subqueries, unlike normal subqueries, are executed once for each row from the outer query.
+
+Examples:
+...
+
 #### EXISTS
+
+Purpose: Used to check if a value exists within the results returned by a subquery.
+
+Example:
+...
 
 #### ALL
 
+Purpose: used to compare a value to all values returned by a subquery. Returns true if the specified condition holds for all values returned by the subquery.
+
+Example:
+...
+
 #### ANY
+
+Purpose: used to compare a value to all values returned by a subquery. Returns true if the specified condition holds for any values returned by the subquery.
+
+Example:
+...
 
 ### Common Table Expressions
 
@@ -244,11 +264,27 @@ Purpose:
 
 ### Aggregation Functions
 
-...
+SQL aggregate functions calculate on a set of values returning a single value. Some of the most common aggregate functions are
+
+| Function | Purpose |
+| -------- | ------- |
+| AVG | Average of set |
+| ANY_VALUE | Any value in set |
+| COUNT | Number of items in set |
+| MAX | Maximum value in set |
+| MIN | Minimum value in set |
+| SUM | Sum of values in set |
 
 ### Window Functions
 
-...
+In addition to the aggregation functions, there are also specific ranking window functions that depend on the ordering of items in a window. Some of the most common ranking window functions are
+
+| Function | Purpose |
+| -------- | ------- |
+| RANK | ... |
+| DENSE_RANK | ... |
+| ROW_NUMBER | ... |
+| PERCENT_RANK | ... |
 
 ### String Functions
 
