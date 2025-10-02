@@ -158,4 +158,6 @@ The LIKE operator returns True if a value matches a pattern and false otherwise.
 
 [SQL Tutorial](https://www.sqltutorial.org)
 
+[Geeks for Geeks SQL Tutorial](https://www.geeksforgeeks.org/sql/sql-tutorial/)
+
 
