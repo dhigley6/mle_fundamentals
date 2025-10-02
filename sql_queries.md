@@ -38,14 +38,22 @@ Purpose: Define what columns/calculated columns to select
 Example usage:
 ~~~~sql
 SELECT
-    *
+    col1, col2, col3
 FROM
     f1
 ~~~~
 
 #### FROM
 
-...
+Purpose: Define what table to select data from
+
+Example usage:
+~~~~sql
+SELECT
+    *
+FROM
+    f1
+~~~~
 
 #### AS
 
@@ -79,6 +87,8 @@ FROM
 
 #### LIKE
 
+The LIKE operator returns True if a value matches a pattern and false otherwise. The LIKE operator has two wildcard characters: '%' matches zero, one or more characters, and '_' matches exactly one character.
+
 #### IS NULL
 
 #### NOT
@@ -88,10 +98,6 @@ FROM
 ...
 
 ### Grouping Rows
-
-...
-
-### Aggregation Functions
 
 ...
 
@@ -115,7 +121,23 @@ FROM
 
 ...
 
+### Aggregation Functions
+
+...
+
 ### Window Functions
+
+...
+
+### String Functions
+
+...
+
+### Date Functions
+
+...
+
+### Math Functions
 
 ...
 
