@@ -277,7 +277,7 @@ SQL aggregate functions calculate on a set of values returning a single value. S
 
 ### Window Functions
 
-In addition to the aggregation functions, there are also specific ranking window functions that depend on the ordering of items in a window. Some of the most common ranking window functions are
+In addition to the aggregation functions, there are also specific ranking and value window functions that depend on the ordering of items in a window. Some of the most common ranking window functions are
 
 | Function | Purpose |
 | -------- | ------- |
@@ -285,14 +285,41 @@ In addition to the aggregation functions, there are also specific ranking window
 | DENSE_RANK | ... |
 | ROW_NUMBER | ... |
 | PERCENT_RANK | ... |
+| NTILE | ... |
+
+Some of the most common value window functions are
+
+| Function | Purpose |
+| -------- | ------- |
+| LAG(column, offset, default) | Retrieve value of column from previous row within the partition |
+| LEAD(column, offest, default) | Retrieve value of column from a succeeding row within the partition |
+| FIRST_VALUE | Return value of column for the first row in the partition |
+| LAST_VALUE | Return value of column for the last row in the partition |
 
 ### String Functions
 
-...
+SQL string functions can be applied to string columns and values for processing. Some of the most common string functions are
+
+| Function | Purpose |
+| -------- | -------- |
+| CONCAT | Concatenate multiple strings |
+| UPPER/LOWER | Convert text to upper/lower case |
+| LENGTH | Length of string in characters |
+| SUBSTRING(string, start, length) | Extracts a substring of string |
+| REPLACE(string, old_substring, new_substring) | Replace occurrences of a substring |
+| INSTR(string, substring) | Find the position of the first occurrence of a substring within a string |
 
 ### Date Functions
 
-...
+SQL date functions can be applied to date columns and values for processing. Some of the most common date functions are
+
+| Function | Purpose |
+| -------- | ------- |
+| CURRENT_DATE | |
+| CURRENT_TIME | |
+| NOW | |
+| EXTRACT | Extract specific date and time components |
+
 
 ### Math Functions
 
