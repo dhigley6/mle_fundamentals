@@ -700,3 +700,5 @@ Helpful Bitwise Utilities (from https://www.techinterviewhandbook.org/algorithms
 Templates: https://dev.to/alexhanbich/dfs-python-templates-4g7l
 
 Algorithms cheat sheets of Tech Interview Handbook: https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/
+
+<!-- Leetcode cheatsheets may be useful: https://leetcode.com/explore/interview/card/cheatsheets/ -->
