@@ -4,27 +4,6 @@ SQL is a high-level, declarative data transformation language supported by relat
 
 ANSI SQL provides standardized version of SQL. Databases generally don't fully adhere to this standardized version though, often requiring some changes when changing databases. 
 
-## Some Example SQL Queries
-
-SQL queries consist of series of clauses. Some examples include:
-
-~~~~sql
-SELECT
-    s1, s2, ...
-FROM
-    f1
-JOIN
-    f2 on join_condition
-GROUP BY
-    g1
-HAVING
-    h1, h2
-LIMIT
-    l1;
-~~~~
-
-...
-
 ## SQL Keywords Review
 
 Many of the most widely used keywords are reviewed in the below table
