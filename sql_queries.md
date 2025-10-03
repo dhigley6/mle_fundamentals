@@ -35,7 +35,7 @@ Many of the most widely used keywords are reviewed in the below table
 
 Purpose: Define what columns/calculated columns to select
 
-Example usage:
+Example:
 ~~~~sql
 SELECT
     col1, col2, col3
@@ -47,7 +47,7 @@ FROM
 
 Purpose: Define what table to select data from
 
-Example usage:
+Example:
 ~~~~sql
 SELECT
     *
@@ -59,7 +59,7 @@ FROM
 
 Purpose: Rename a column or table with an alias
 
-Example usage:
+Example:
 ~~~~sql
 SELECT
     col1 AS renamed_col
@@ -75,7 +75,7 @@ Purpose: Sort the result set in ascending or descending order.
 
 The result set is sorted in ascending order by default, which can be more explicitly stated by including the ASC keyword or changed to descending order by including the DESC keyword.
 
-Example usage:
+Example:
 ~~~~sql
 SELECT
     *
@@ -222,7 +222,32 @@ Purpose:
 
 ### Conditionals
 
-...
+#### CASE/WHEN/THEN/ELSE/END
+
+Purpose: Add conditional logic to SQL queries.
+
+Example:
+~~~~sql
+SELECT
+    product_name,
+    CASE
+        WHEN price < 10 THEN 'cheap'
+        WHEN price >= 10 AND price <= 20 THEN 'average'
+        WHEN price >= 20 THEN 'expensive'
+        ELSE 'unknown'
+    END price_category
+FROM
+    products;
+~~~~
+
+#### COALESCE
+
+Purpose: Takes one or more arguments and returns first non-null argument.
+
+Example:
+~~~~sql
+SELECT COALESCE(NULL, 'non-null') AS example;
+~~~~
 
 ### Subqueries
 
@@ -252,13 +277,46 @@ Purpose: used to compare a value to all values returned by a subquery. Returns t
 Example:
 ...
 
-### Common Table Expressions
-
-...
-
 ### Regular Expressions
 
 ...
+
+### Common Table Expressions
+
+#### WITH
+
+Purpose: Define a temporary result set that can be referenced within a query
+
+Example:
+~~~~sql
+WITH MonthlySales AS (
+    SELECT
+        DATE_TRUNC('month', order_date) AS sales_month,
+        SUM(amount) AS total_monthly_sales
+    FROM
+        orders
+    GROUP BY
+        sales_month
+)
+SELECT
+    sales_month,
+    total_monthly_sales
+FROM
+    MonthlySales
+WHERE
+    total_monthly_sales > 10000;
+~~~~
+
+### Other
+
+#### INTERVAL
+
+Purpose: Define a timespan such as years, days or seconds.
+
+Example:
+~~~~sql
+SELECT date + INTERVAL '1 month';
+~~~~
 
 ## SQL Functions Review
 
@@ -319,11 +377,23 @@ SQL date functions can be applied to date columns and values for processing. Som
 | CURRENT_TIME | |
 | NOW | |
 | EXTRACT | Extract specific date and time components |
-
+| TO_DATE | Convert string to date format |
+| TO_CHAR | Convert date or timestamp into formatted string |
 
 ### Math Functions
 
-...
+SQL math functions can be applied to columns and values for processing. Some of the most common are
+
+| Function | Purpose |
+| -------- | ------- |
+| ABS      | Absolute value |
+| FLOOR | Round a number down to the nearest integer |
+| LOG | Base 10 logarithm |
+| POWER | Raise a number to the specified power |
+| ROUND | Round a number |
+| RANDOM | Generate a random number between 0 and 1 |
+
+
 
 
 ## References
