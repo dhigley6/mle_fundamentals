@@ -478,6 +478,7 @@ Basic idea: Iteratively move a window across an array, calculating properties of
 
 ### 5. Binary Search
 
+<!-- Very good video on binary search: https://www.youtube.com/watch?v=GU7DpgHINWQ -->
 <!-- Good overview of binary search: https://leetcode.com/discuss/post/786126/python-powerful-ultimate-binary-search-t-rwv8/ -->
 
 Basic idea: Find an element with a particular value in a sorted array (if it exists) by recursively dividing the array in half and searching the half that it must belong in (if it is there).
