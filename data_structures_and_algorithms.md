@@ -638,17 +638,17 @@ Basic idea: iteratively traverse a graph by visiting a node, then all of its nei
 # nodes.
 from collections import deque
 
-visited = set()
-
 def do_something(node):
     pass
 
 def get_neighbors(node):
     pass
 
-def bfs(start_node, visited):
+def bfs(start_node):
+    visited = set()
     to_visit = deque()
     to_visit.append(start_node)
+    visited.add(start_node)
     while len(to_visit) > 0:
         node = to_visit.popleft()
         if node in visited:
@@ -657,6 +657,7 @@ def bfs(start_node, visited):
         neighbor_list = get_neighbors(node)
         for neighbor in neighbor_list:
             to_visit.append(neighbor)
+            visited.add(neighbor)
 ```
 
 #### 8c. Topological Sort
