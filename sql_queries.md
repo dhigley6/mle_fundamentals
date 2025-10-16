@@ -1,6 +1,6 @@
 # SQL Queries Quick Review
 
-SQL is a high-level, declarative data transformation language supported by relational databases and other data manipulation software like spark. SQL consists of multiple sublanguages: data query language, used for performing queries on data, data definition language, used for creating and modifying objects in databases, data control language, used to control access to data, and data manipulation language, used for inserting, deleting and modifying data.
+SQL is a high-level, declarative data transformation language supported by relational databases and other data manipulation software like spark. SQL consists of multiple sublanguages: data query language, used for performing queries on data, data definition language, used for creating and modifying objects in databases, data control language, used to control access to data, and data manipulation language, used for inserting, deleting and modifying data. This article reviews the data query language component.
 
 ANSI SQL provides standardized version of SQL. Databases generally don't fully adhere to this standardized version though, often requiring some changes when changing databases. 
 
@@ -146,14 +146,37 @@ WHERE Country in ('USA', 'Mexico');
 
 #### LIKE
 
-The LIKE operator returns True if a value matches a pattern and false otherwise. The LIKE operator has two wildcard characters: '%' matches zero, one or more characters, and '_' matches exactly one character.
+Purpose: Returns True if a value matches a pattern and false otherwise. The LIKE operator has two wildcard characters: '%' matches zero, one or more characters, and '_' matches exactly one character.
 
 Example:
+~~~~sql
+SELECT *
+FROM Customers
+WHERE Name LIKE 'J%';
+~~~~
 
 
 #### IS NULL
 
+Purpose: Test if a value is NULL or not.
+
+Example:
+~~~~sql
+SELECT *
+FROM Customers
+WHERE Name IS NULL;
+~~~~
+
 #### NOT
+
+Purpose: Negate a condition.
+
+Example:
+~~~~sql
+SELECT *
+FROM Customers
+WHERE Name IS NOT NULL;
+~~~~
 
 ### Joining Tables
 
@@ -177,23 +200,74 @@ INNER JOIN table2 ON table1.col1=table2.col1;
 
 #### GROUP BY
 
-Purpose: 
+Purpose: Group rows based on one or more columns.
+
+Example:
+~~~~sql
+SELECT name, COUNT(*)
+FROM Customers
+GROUP BY name;
+~~~~
 
 #### HAVING
 
+Purpose: Select grouped rows based on condition.
+
+Example:
+~~~~sql
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+~~~~
+
 #### GROUPING SETS
 
+Purpose: Specify multiple groupings for data in the same query.
+
+Example:
+~~~~sql
+SELECT ProductID, Region, SUM(TotalSales)
+FROM Sales
+GROUP BY GROUPING SETS(
+    (ProductID, Region),
+    (ProductID),
+    ()
+);
+~~~~
+
 #### ROLLUP
+
+Purpose: Calculate grouped aggregations at different hierarchical levels of detail.
+
+Example:
+~~~~sql
+SELECT Country, Region, Product, SUM(Sales)
+FROM Sales
+GRUP BY ROLLUP(Country, Region, Product);
+~~~~
 
 ### Set Operations
 
 #### UNION/UNION ALL
 
-...
+Purpose: Combine the result sets of two select statements. The UNION operator removes duplicate rows from the result set, while the UNION ALL operator includes duplicates.
+
+Example:
+~~~~sql
+SELECT id
+FROM table1
+UNION
+SELECT id
+FROM table2;
+~~~~
 
 #### INTERSECT
 
-...
+Purpose: Return the common rows of the result sets of two select statements
+
+Example:
+
 
 #### MINUS
 
@@ -285,6 +359,10 @@ FROM
 WHERE
     total_monthly_sales > 10000;
 ~~~~
+
+### Window Functions
+
+......
 
 ### Other
 
