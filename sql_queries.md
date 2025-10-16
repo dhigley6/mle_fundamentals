@@ -267,11 +267,26 @@ FROM table2;
 Purpose: Return the common rows of the result sets of two select statements
 
 Example:
-
+~~~~sql
+SELECT name
+FROM products
+INTERSECT
+SELECT name
+FROM exports;
+~~~~
 
 #### MINUS
 
-...
+Purpose: Find rows that appear in the first select statement, but not the second.
+
+Example:
+~~~~sql
+SELECT name
+FROM products
+MINUS
+SELECT name
+FROM exports;
+~~~~
 
 ### Conditionals
 
@@ -306,33 +321,65 @@ SELECT COALESCE(NULL, 'non-null') AS example;
 
 A SQL subquery is a query nested within another query. A correlated subquery is a special type of subquery which references a column from the outer query. Correlated subqueries, unlike normal subqueries, are executed once for each row from the outer query.
 
-Examples:
-...
+Subquery example:
+~~~~sql
+SELECT first_name, salary
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
+~~~~
+
 
 #### EXISTS
 
 Purpose: Used to check if a value exists within the results returned by a subquery.
 
 Example:
-...
+~~~~sql
+SELECT name
+FROM customers
+WHERE EXISTS (
+    SELECT 1
+    FROM orders
+    WHERE orders.customer_id=customers.customer_id
+);
+~~~~
 
 #### ALL
 
 Purpose: used to compare a value to all values returned by a subquery. Returns true if the specified condition holds for all values returned by the subquery.
 
 Example:
-...
+~~~~sql
+SELECT first_name, salary
+FROM employees
+WHERE salary < ALL (SELECT salary FROM employees WHERE department='IT');
+~~~~
 
 #### ANY
 
 Purpose: used to compare a value to all values returned by a subquery. Returns true if the specified condition holds for any values returned by the subquery.
 
 Example:
-...
+~~~~sql
+SELECT first_name, salary
+FROM employees
+WHERE salary < ANY (SELECT salary FROM employees WHERE department='IT');
+~~~~
 
 ### Regular Expressions
 
-...
+The operator for regular expressions varies across databases. In Postgres, it is ~ for case-sensitive regular expressions and ~* for case-insensitive ones.
+
+Example:
+~~~~sql
+SELECT
+    id,
+    email
+FROM
+    employees
+WHERE
+    email ~* '*@example\.com$';
+~~~~
 
 ### Common Table Expressions
 
@@ -362,7 +409,52 @@ WHERE
 
 ### Window Functions
 
-......
+Window functions calculate results over windows of rows at a time. Standard aggregation functions can be used with window functions, in which case the results will not depend on order within the window. In addition, special window functions can be used which do depend on ordering within the window.
+
+#### OVER/PARTITION BY/ORDER BY
+
+Purpose: Specify window to calculate window function over. The OVER operator specifies the start of a window definition. PARTITION BY defines which rows belong to different windows. ORDER BY defines the ordering within a window. In 
+
+Example:
+~~~~sql
+SELECT
+    first_name, department, salary,
+    RANK(salary) OVER (PARTITION BY department ORDER BY salary DESC) AS department_salary_rank
+FROM
+    employees; 
+~~~~
+
+#### N PRECEEDING/UNBOUNDED PRECEEDING/CURRENT ROW/UNBOUNDED FOLLOWING/N FOLLOWING
+
+Purpose: Define which rows to include in the current frame calculation based on row order. 
+
+Example:
+~~~~sql
+SELECT
+    sale_date, revenue,
+    AVG(revenue) OVER (
+        ORDER BY sale_date
+        ROWS BETWEEN 2 PRECEEDING AND CURRENT ROW
+    ) AS three_month_moving_avg
+FROM monthly_sales;
+~~~~
+
+#### WINDOW
+
+Purpose: Define a window which can be used with multiple window functions in a query.
+
+Example:
+~~~~sql
+SELECT
+    product_id, region,
+    AVG(sales_amount) OVER product_region_window AS avg_regional_sales,
+    SUM(sales_amount) OVER product_region_window AS total_regional_sales
+FROM
+    sales
+WINDOW product_region_window AS (
+    PARTITION BY product_id, region
+);
+~~~~
 
 ### Other
 
@@ -396,11 +488,11 @@ In addition to the aggregation functions, there are also specific ranking and va
 
 | Function | Purpose |
 | -------- | ------- |
-| RANK | ... |
-| DENSE_RANK | ... |
-| ROW_NUMBER | ... |
-| PERCENT_RANK | ... |
-| NTILE | ... |
+| RANK | Assigns a rank to each value with gaps after ties |
+| DENSE_RANK | Assigns a rank to each value without gaps after ties |
+| ROW_NUMBER | Assigns a unique, sequential rank to each row, even for ties |
+| PERCENT_RANK | Like rank, but scales values to between 0 and 1 (inclusive) |
+| NTILE | Breaks a result set into a specified number of groups, assigning the same number to all rows within a group. |
 
 Some of the most common value window functions are
 
@@ -430,9 +522,9 @@ SQL date functions can be applied to date columns and values for processing. Som
 
 | Function | Purpose |
 | -------- | ------- |
-| CURRENT_DATE | |
-| CURRENT_TIME | |
-| NOW | |
+| CURRENT_DATE | Retrieve the current date |
+| CURRENT_TIME | Retrieve current time of day |
+| NOW | Retrieve current timestamp including date and time of day |
 | EXTRACT | Extract specific date and time components |
 | TO_DATE | Convert string to date format |
 | TO_CHAR | Convert date or timestamp into formatted string |
