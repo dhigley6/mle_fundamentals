@@ -36,6 +36,10 @@ $$
 
 where $a$ is the input.
 
+### Residual Connections
+
+Residual connections enable the training of deep networks by adding the input of a layer directly to its output. This allows networks to learn a residual mapping, which is the difference between the desired output and the input. Residual connections help solve the vanishing gradient problem by providing an alternative direct path for the gradients to flow.
+
 ### Learning with Gradient Descent
 
 Minimizing neural network loss functions is a high dimensional optimization problem in the space of the weights of the neural network. 
@@ -57,7 +61,41 @@ This is implemented as a core part of standard machine learning frameworks like 
 
 ### Regularization
 
-...
+Regularization is a set of techniques used to prevent overfitting by biasing machine learning algorithms towards models which are more likely to generalize well, typically simpler models with higher levels of smoothness in feature space.
+
+#### Accounting for Symmetries/Invariances of the Problem
+
+One important form of regularization is to account for symmetries and invariances of the problem into the model selection process. Ways of accomplishing this include
+1. Pre-processing: Use features that are invariant under the required transformations.
+2. Regularized error function: The error function includes a regularization term that penalizes changes in model prediction while a desired symmetry is preserved.
+3. Data augmentation: The training dataset is expanded to include additional observations which are transformed examples of original observations where the applied transformations should not change model predictions.
+4. Network architecture choice: The symmetry properties of the problem are built into the network architecture. An example is convolutional neural networks, which are designed to be translation equivariant.
+
+#### Weight Decay
+
+Another common method of regularization is to add a regularization term to the error function proportional to the sum of squares of the weights in the model:
+
+$$
+\tilde{E}(\mathbf{w}) + \frac{\lambda}{2}\mathbf{w}^T\mathbf{w}.
+$$
+
+This can be interpreted as adding a zero-mean Gaussian prior to the weight distribution and encourages weights to decay towards zero, as seen by the gradient of the error function,
+
+$$
+\nabla \tilde{E}(\mathbf{w}) = \nabla E(\mathbf{w}) + \lambda \mathbf{w}
+$$
+
+#### Early Stopping
+
+Early stopping is another regularization technique which avoids overfitting by stopping the model training process when error on a validation set starts to consistently increase with further training.
+
+#### Parameter Sharing
+
+Parameter sharing is when groups of weights in a network share the same value learned from data. Convolutional neural networks can be viewed as one example of this. It is also possible to do soft parameter sharing by adding terms to error functions which encourage weights to be close to eachother
+
+#### Dropout
+
+In dropout, nodes are deleted at random from a network during training. Each time a data point is presented during training, a new choice of which nodes to drop is made. Dropout can be viewed as a method of approximate model averaging. After training, model predictions are made without nodes being dropped out.
 
 ### Neural Networks are Universal Approximators
 
