@@ -182,6 +182,18 @@ Adding position embedding vectors to the input vectors enables the transformer t
 
 <!-- Add something on encoder, decoder, encoder-decoder architectures -->
 
+### Convolutional Neural Networks
+
+Convolutional Neural Networks (CNNs) are a particular type of neural network architecture that incorporate sparseness and parameter sharing in a manner designed to respect the symmetries of image date. The main layers of a CNN are 
+- Convolutional layers: A filter, typically much smaller than the number of inputs at the current layer, slides across the inputs, producing one output for each selected relative position of the filter and the output. The output is given by the element-wise multiplication of the filter and the inputs for each specific position. When using strided convolutions, the filter is moved multiple potential positions at a time and only a subset of the possible relative positions of filter and inputs are used to produce outputs.
+- Activation layers are applied after the convolutional layers.
+- Pooling layers reduce the dimensionality of the input by performing an aggregation over inputs within its range, often the maximum.
+- A series of fully connected layers are often included after the convolutional and pooling layers for tasks such as image classification.
+
+CNNs incorporate the following aspects of image data into their architecture:
+1. Hierarchy and locality: Images are typically composed of features (like a face), that are composed of smaller, less complex features (eyes, mouth, nose, etc.) which are in turn composed of even smaller and simpler features (simple shapes, edges, etc.). CNNs can model this hierarchy effectively through their hierarchical layer structure where earlier layers incorporate more local and less complex structure than later layers.
+2. Translation invariance: since the same set of filters are applied to every group of pixels shifted by a given amount in a given layer, CNNs naturally incorporate translation invariance into their architecture.
+
 ## References
 
 1. ["Deep Learning: Foundations and Concepts"](https://www.bishopbook.com) by Chris Bishop (2023).
