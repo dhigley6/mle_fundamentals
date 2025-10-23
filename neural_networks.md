@@ -194,6 +194,21 @@ CNNs incorporate the following aspects of image data into their architecture:
 1. Hierarchy and locality: Images are typically composed of features (like a face), that are composed of smaller, less complex features (eyes, mouth, nose, etc.) which are in turn composed of even smaller and simpler features (simple shapes, edges, etc.). CNNs can model this hierarchy effectively through their hierarchical layer structure where earlier layers incorporate more local and less complex structure than later layers.
 2. Translation invariance: since the same set of filters are applied to every group of pixels shifted by a given amount in a given layer, CNNs naturally incorporate translation invariance into their architecture.
 
+
+#### Example CNNs for Different Tasks
+
+##### Image Classification
+
+A typical CNN for image classification consists of a series of convolutional and pooling layers followed by some fully-connected layers and finally an output layer with softmax activation to predict the image class. The filter maps typically decrease in dimensionality progressing through the convolutional layers while the number of channels increases. Most of the connections are in the earlier convolutional layers while most of the parameters are often in the early fully connected layers.
+
+##### Object Detection
+
+In object detection, bounding boxes are often output which specify the presence and location of different objects in an image. To do this efficiently, a single convolutional neural network can first be trained to predict the presence of tightly cropped objects in smaller imagees. This network can then be enlarged by increasing the size of the convolutional and pooling layers, which results in multiple outputs for different regions of the image. To additionally detect objects with different scales in addition to positions, one can input multiple versions of the image which have been scaled in different ways to the network.
+
+##### Image Segmentation
+
+A CNN for image segmentation can follow a encoder-decoder-like architecture. Initial encoder convolutional and pooling layers reduce the size of feature maps while increasing the number of channels, leading to a low resolution semantic representation in the middle of the network. Later decoder layers reverse the downsampling effect with transpose convolution and unpooling layers, finally resulting in an output with the same dimensions as the input and a number of channels equal to the number of classes included in the segmentation. Each of the ouput channels corresponds to the probability of each pixel containing the corresponding class. In the U-net architecture, skip-level connections are included directly from encoder layers to decoder layers. This assists in maintaining high resolution information that is lost in the encoder layers.
+
 ## References
 
 1. ["Deep Learning: Foundations and Concepts"](https://www.bishopbook.com) by Chris Bishop (2023).
