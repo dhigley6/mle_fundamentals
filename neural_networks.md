@@ -112,6 +112,8 @@ Here, we review a few of the currently most important ones for applications.
 ### Transformers
 
 <!-- Transformers can be viewed as GNNs: https://graphdeeplearning.github.io/post/transformers-are-gnns/ -->
+<!-- Good youtube overview of Transformers: https://www.youtube.com/watch?v=SAZnP94lgh4 -->
+<!-- https://jalammar.github.io/illustrated-transformer/ -->
 
 Transformers are composed of transformer layers that transform a set of vectors into another set of vectors having the same dimensionality. 
 Since their introduction in 2017, transformers have greatly surpassed Recurrent Neural Networks (RNNs) on Natural Language Processing tasks, as well as outperformed convolutional neural networks on image processing and been used on multimodal datasets combining multiple types of data.
