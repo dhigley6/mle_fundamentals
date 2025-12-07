@@ -53,6 +53,8 @@ Thus, gradient-based optimization methods are used since higher-order optimizati
 
 <!-- Add batch/layer normalization here -->
 
+<!-- Overview of gradient descent-based optimizers: https://www.ruder.io/optimizing-gradient-descent/ -->
+
 To determine the relevant derivatives for the optimization processes above, one typically uses automatic differentiation.
 In reverse-mode automatic differentiation, one augments intermediate variables in the calculation of a neural network output with adjoint variables which can be evaluated sequentially starting from the output of the network using the chain rule of calculus.
 This is implemented as a core part of standard machine learning frameworks like Tensorflow and Pytorch.
